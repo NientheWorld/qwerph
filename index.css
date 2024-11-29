@@ -1,0 +1,59 @@
+body{
+    background-color:rgb(207, 207, 207)
+}
+
+#wrapper {
+    min-width: 1002px;
+}
+
+.txtar1 {
+   padding: 2.5%;
+   align-self: center;
+   font-family: Helvetica;
+   border-style: solid;
+   border-width:thick ;
+   border-color: rgb(0, 0, 0);
+   margin-top: 1%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.txtar1::placeholder {
+    font-size: 15px;
+}
+
+.txtar2 {
+font-family: Helvetica;
+   border-style: dashed;
+   border-color: rgb(0, 0, 0);
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.selection {
+    margin-top: 1%;
+    text-align: center;
+    display: block;
+     margin-left: auto;
+     margin-right: auto;
+    }
+
+.btn1 {
+    display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.btn2 {
+    display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+.smem {
+    font-size:90%;
+    
+    
+}

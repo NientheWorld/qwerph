@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"
+    content="width=device-with, initial-scale=1">
+    <title>QWER Philippines</title>
+    <link rel="icon" type="image/x-icon" href="qwerlogo.png">
+    <link rel="stylesheet" href="index.css"/> 
+</head>
+<body>
+
+
+<h3 style="text-align: center; font-family: Lemon Milk;">SNS CAPTIONING AREA</h3>
+
+<div >
+    <textarea class="txtar1" id="txtar" rows="10" cols="40" placeholder="Input Caption Here"></textarea>
+    </div>
+    <br>
+     <div class="selection">
+        <b><label for="updates">Choose a  Header: </label></b>
+     <select name="updates" class="bx1" id="choose">
+        <option value="📷|">Picture Update</option>
+        <option value="📺|">Video Update</option>
+        <option value="📢|">Announcement Update</option>
+        <option value="🗳|">Voting Update Update</option>
+        <option value="🎉|">Event Update</option>
+
+        </select>
+        <br>
+        <br>
+        <div class="selection">
+            <b><label for="updates">Choose a 2nd Header : </label></b>
+         <select name="updates" class="bx1" id="choose2">
+            <option value="QWER UPDATE">QWER Update</option>
+            <option value="Chodan Update">Chodan Update</option>
+            <option value="Magenta Update">Magenta Update</option>
+            <option value="Siyeon Update">Siyeon Update</option>
+            <option value="Hina Update">Hina Update</option>
+            </select>
+        <br>
+        <br>
+<b><label for="members">Choose Members: </label><br></b>
+<div class="smem">
+<input type="checkbox" 
+           name="members" 
+           value="#Chodan #쵸단"> Chodan
+    <input type="checkbox" 
+           name="members" 
+           value="#Magenta #마젠타"> Magenta
+    <input type="checkbox" 
+           name="members" 
+           value="#Siyeon #시연"> Siyeon
+    <input type="checkbox" 
+           name="members" 
+           value="#Hina #히나"> Hina <br><br>
+</div>
+    <button class="btn1" type="button" onclick="getValue()" id="chk">
+        Enter
+    </button>
+<br>
+         <div >
+    <textarea class="txtar3" id="merms" rows="5" cols="40" placeholder="Example Hashtag" readonly></textarea>
+    </div>
+    
+    <form>
+        <b><label>Additional Hashtags</label></b>
+        <div >
+            <textarea class="txtar3" id="other" rows="1" cols="40" placeholder="Input Additional Hashtags Here"></textarea>
+            </div>
+    </form>
+
+    <br>
+    <br>
+    <div style="margin-left: 4%">
+   <b><label>Link Included</label></b>
+    <select id="link">
+       <option value="yes">Yes</option>
+       <option value="no">No</option>
+    </select>
+    </div>
+        <br>
+    <div >
+       <textarea class="txtar3" id="lenk" rows="1" cols="40" placeholder="Input Link Here"></textarea>
+       </div>
+   </div>
+   
+    <br>
+    <button class="btn1" type="button" onclick="greet()" id="clck">Generate</button>
+
+
+   <br>
+   <br>
+   <textarea class="txtar2" id="header" rows="15" cols="40" readonly></textarea>
+   <br>
+   <button class="btn2" type="button" onclick="copycat()" id="clip">Copy to Clipboard</button>
+   <br>
+   <br>
+   <br>
+   <br>
+<script>
+function getValue() {
+            let checkboxes =
+                document.getElementsByName('members');
+            let result = "";
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    result += checkboxes[i].value
+                        + " " + " ";
+                }
+            }
+chk.addEventListener("click",function(){
+  document.getElementById("merms").innerHTML = result;
+}
+)}
+  
+function greet(){
+        var cap = document.getElementById("txtar").value;
+        var clck = document.getElementById("clck");
+        var oth = document.getElementById("other").value;
+        var choo = document.getElementById("choose").value;
+        var choo2 = document.getElementById("choose2").value;
+        var link = document.getElementById("link").value;
+        var tek = document.getElementById("merms").value;
+    
+  clck.addEventListener("click",function(){
+            
+            var link = document.getElementById("link").value;
+            if (link == "yes") {
+                var lonk = document.getElementById("lenk").value;
+                var ans = "🔗 " + lonk + "\n";
+            }
+
+            if (link == "no") {
+                var ans = " ";
+            }
+            
+            document.getElementById("header").innerHTML = 
+            choo + choo2 + "\n\n" + cap + "\n\n" + ans + "\n\n" + "#QWER # 큐더블유이알 #BAWIGE " + tek + oth + " @official_QWER"
+            ;
+            
+        })
+    }
+
+    function copycat(){
+        var copykey = document.getElementById("header");
+
+            copykey.select();
+            copykey.setSelectionRange(0,9999999);
+
+            document.execCommand("copy");
+            alert("copied to clipboard");
+    }
+</script>
+
+</body>
+</html>
